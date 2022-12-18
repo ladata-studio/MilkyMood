@@ -9,6 +9,14 @@ export const Footer = styled.footer`
   align-items: center;
   gap: 70px;
   padding: 15px;
+
+  @media screen and (max-width: 1050px) {
+    gap: 30px;
+  }
+
+  @media screen and (max-width: 700px) {
+    gap: 20px;
+  }
 `;
 
 export const H2 = styled.h2`
@@ -17,6 +25,15 @@ export const H2 = styled.h2`
   font-size: 64px;
   line-height: 0.7;
   font-weight: 600;
+
+  @media screen and (max-width: 1050px) {
+    font-size: 44px;
+  }
+
+  @media screen and (max-width: 700px) {
+    font-size: 24px;
+    padding: 15px;
+  }
 `;
 
 export const H2Middle = styled(H2)`
@@ -33,5 +50,10 @@ export const H2Middle = styled(H2)`
     width: 100%;
     height: 3px;
     background-color: #fbfbfb;
+
+    @media screen and (max-width: 700px) {
+      top: 52%;
+      height: 2px;
+    }
   }
 `;
