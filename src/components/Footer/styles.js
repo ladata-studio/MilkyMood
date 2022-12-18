@@ -17,6 +17,10 @@ export const Footer = styled.footer`
   @media screen and (max-width: 700px) {
     gap: 20px;
   }
+
+  @media screen and (max-width: 450px) {
+    gap: 12px;
+  }
 `;
 
 export const H2 = styled.h2`
@@ -33,6 +37,11 @@ export const H2 = styled.h2`
   @media screen and (max-width: 700px) {
     font-size: 24px;
     padding: 15px;
+  }
+
+  @media screen and (max-width: 450px) {
+    font-size: 18px;
+    padding: 12px;
   }
 `;
 

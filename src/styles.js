@@ -43,8 +43,8 @@ export const ImageContainer = styled.div.attrs(({ isTogether }) => ({
   position: relative;
   height: 600px;
   width: 400px;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
 `;
 
 export const Wrapper = styled.section.attrs(({ color }) => ({
