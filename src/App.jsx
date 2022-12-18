@@ -12,7 +12,7 @@ for (let i = 0; i < 6; i++) {
 }
 
 const App = () => {
-  const [distance, setDistance] = useState(0);
+  const [distance, setDistance] = useState(1);
 
   const easing = (num) => Math.pow(num, 3);
 
@@ -41,8 +41,9 @@ const App = () => {
       <Wrapper
         onMouseMove={handleMove}
         onTouchMove={handleTouchMove}
+        color={Math.round(240 - distance * 40)}
       >
-        <ImageContainer>
+        <ImageContainer isTogether={distance < 0.001}>
           {coords.map(([x, y], index) => (
             <ImageBox
               key={index}
