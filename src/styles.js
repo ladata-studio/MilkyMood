@@ -1,4 +1,4 @@
-import { createGlobalStyle, css } from 'styled-components';
+import styled, { createGlobalStyle, css } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
   body {
@@ -23,4 +23,20 @@ export const Marginals = css`
   width: 100vw;
   pointer-events: none;
   z-index: 1;
+`;
+
+export const ImageContainer = styled.div`
+  position: relative;
+  height: 600px;
+  width: 400px;
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+export const Wrapper = styled.section`
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;

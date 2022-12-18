@@ -13,3 +13,4 @@ export const Logo = styled(LogoSVG)`
   max-width: 760px;
   height: auto;
 `;
+
