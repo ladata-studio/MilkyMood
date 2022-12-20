@@ -1,10 +1,12 @@
 import React from 'react';
-import { BG, Modal } from './styles';
+import { BG, CloseButton, Modal } from './styles';
 
 const ModalComponent = ({ onClose }) => {
   return (
     <>
-      <Modal />
+      <Modal>
+        <CloseButton onClick={onClose} />
+      </Modal>
       <BG onClick={onClose} />
     </>
   );

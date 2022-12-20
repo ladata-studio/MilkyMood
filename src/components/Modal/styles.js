@@ -1,10 +1,8 @@
 import styled from 'styled-components';
+import { AbsoluteCenter } from '../../styles';
 
 export const Modal = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  ${AbsoluteCenter}
   box-sizing: border-box;
   width: calc(100vw - 60px);
   max-width: 800px;
@@ -26,4 +24,40 @@ export const BG = styled.div`
   background-color: rgba(0, 0, 0, 0.5);
   cursor: pointer;
   z-index: 2;
+`;
+
+export const CloseButton = styled.button`
+  position: absolute;
+  top: 60px;
+  right: 60px;
+  height: 33px;
+  width: 33px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 0;
+    height: 33px;
+    width: 2px;
+    background-color: #0519ce;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+
+  @media screen and (max-width: 700px) {
+    right: 30px;
+    top: 30px;
+  }
 `;

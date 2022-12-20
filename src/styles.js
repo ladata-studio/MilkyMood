@@ -35,6 +35,13 @@ export const Marginals = css`
   z-index: 1;
 `;
 
+export const AbsoluteCenter = css`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+`;
+
 export const ImageContainer = styled.div.attrs(({ isTogether }) => ({
   style: {
     animation: isTogether ? 'glow 3s infinite alternate' : 'none',
@@ -60,10 +67,7 @@ export const Wrapper = styled.section.attrs(({ color }) => ({
 `;
 
 export const Button = styled.button`
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  ${AbsoluteCenter}
   width: 300px;
   padding: 25px 0 20px;
   border: 2px solid #fbfbfb;
