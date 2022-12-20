@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import Modal from './components/Modal';
 import { Button, GlobalStyle, ImageContainer, Wrapper } from './styles';
 import ImageBox from './components/ImageBox';
+import ModalInner from './components/ModalInner';
 
 const coords = [];
 for (let i = 0; i < 6; i++) {
@@ -42,7 +43,11 @@ const App = () => {
   return (
     <>
       <GlobalStyle />
-      {showModal && <Modal onClose={toggleModal} />}
+      {showModal && (
+        <Modal onClose={toggleModal}>
+          <ModalInner />
+        </Modal>
+      )}
       <Header />
       <Footer />
       <Wrapper
