@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import { GlobalStyle, ImageContainer, Wrapper } from './styles';
+import Modal from './components/Modal';
+import { Button, GlobalStyle, ImageContainer, Wrapper } from './styles';
 import ImageBox from './components/ImageBox';
 
 const coords = [];
@@ -13,6 +14,7 @@ for (let i = 0; i < 6; i++) {
 
 const App = () => {
   const [distance, setDistance] = useState(1);
+  const [showModal, setShowModal] = useState(false);
 
   const easing = (num) => Math.pow(num, 3);
 
@@ -33,9 +35,14 @@ const App = () => {
     calculateDistance([touches[0].clientX, touches[0].clientY]);
   };
 
+  const toggleModal = () => {
+    setShowModal((sm) => !sm);
+  };
+
   return (
     <>
       <GlobalStyle />
+      {showModal && <Modal onClose={toggleModal} />}
       <Header />
       <Footer />
       <Wrapper
@@ -44,6 +51,7 @@ const App = () => {
         color={Math.round(240 - distance * 40)}
       >
         <ImageContainer isTogether={distance < 0.001}>
+          <Button onClick={toggleModal}>Sign up for updates</Button>
           {coords.map(([x, y], index) => (
             <ImageBox
               key={index}
