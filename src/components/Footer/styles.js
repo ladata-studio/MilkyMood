@@ -40,7 +40,7 @@ export const H2 = styled.h2`
   }
 
   @media screen and (max-width: 450px) {
-    font-size: 18px;
+    font-size: 16px;
     padding: 12px;
   }
 `;

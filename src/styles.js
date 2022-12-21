@@ -69,7 +69,9 @@ export const Wrapper = styled.section.attrs(({ color }) => ({
 export const Button = styled.button`
   ${AbsoluteCenter}
   width: 300px;
-  padding: 25px 0 20px;
+  padding: 0;
+  padding-top: 25px;
+  padding-bottom: 20px;
   border: 2px solid #fbfbfb;
   border-radius: 100%;
   background: none;
