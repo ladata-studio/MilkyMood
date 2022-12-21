@@ -9,6 +9,7 @@ export const Input = styled.input`
   margin-bottom: 24px;
   padding: 12px;
   border: 2px solid #000000;
+  border-radius: 0;
   font-family: 'Work Sans';
   font-size: 18px;
   font-size: 500;
@@ -38,6 +39,7 @@ export const Submit = styled.input.attrs({
   float: right;
   padding: 12px;
   border: 2px solid #0519ce;
+  border-radius: 0;
   background: none;
   color: #0519ce;
   font-size: 16px;
@@ -45,7 +47,11 @@ export const Submit = styled.input.attrs({
   text-transform: uppercase;
   cursor: pointer;
 
-  &:hover {
+  &:hover,
+  &:action {
+    padding: 12px;
+    border: 2px solid #0519ce;
+    border-radius: 0;
     background-color: #0519ce;
     color: #fbfbfb;
   }
