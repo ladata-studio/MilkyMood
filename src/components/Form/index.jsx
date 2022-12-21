@@ -1,6 +1,21 @@
 import React from 'react';
 import * as Yup from 'yup';
-import { Formik, Form, Field } from 'formik';
+import { Formik, Form, Field, useField } from 'formik';
+
+const InputComponent = ({ label, ...props }) => {
+  const [field, meta] = useField(props);
+
+  return (
+    <label>
+      {label}:{' '}
+      {meta.touched && meta.error && <div>{meta.error}</div>}
+      <input
+        {...field}
+        {...props}
+      />
+    </label>
+  );
+};
 
 const FormComponent = ({ onSubmit }) => {
   const schema = Yup.object().shape({
@@ -19,27 +34,22 @@ const FormComponent = ({ onSubmit }) => {
       onSubmit={onSubmit}
       validationSchema={schema}
     >
-      {({errors, touched}) => (
+      {() => (
         <Form>
-          <label for="name">Name:</label>
-          <Field
+          <InputComponent
             type="text"
             name="name"
-            id="name"
+            label="Name"
             autoComplete="off"
           />
-          {touched.name && errors && <div>{errors.name}</div>}
 
-          <label for="email">E-mail:</label>
-          <Field
+          <InputComponent
             type="email"
             name="email"
             id="email"
+            label="E-mail"
             autoComplete="off"
           />
-          {touched.email && errors && (
-            <div>{errors.email}</div>
-          )}
 
           <Field
             type="submit"
